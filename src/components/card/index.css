@@ -1,0 +1,8 @@
+.card {
+    width: 116px;
+    height: 160px;
+    margin: 10px;
+
+    background-position: 50% 50%;
+    background-size: cover;
+}

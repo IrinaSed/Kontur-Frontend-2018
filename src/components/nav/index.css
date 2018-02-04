@@ -1,0 +1,21 @@
+.nav {
+    display: flex;
+    justify-content: space-between;
+}
+
+.nav__button {
+    text-decoration: none;
+}
+
+.nav__score,
+.nav__button {
+    font-size: 14px;
+    font-weight: bold;
+    line-height: 19px;
+
+    margin: 10px;
+    padding: 0;
+
+    opacity: .8;
+    color: #fff;
+}
