@@ -30,7 +30,7 @@ export default handleActions({
     [CHANGE_SCORE]: (state, {payload}) => ({
         ...state,
         score: payload ?
-            state.score + 42 * ((16 - state.openCards.length) / 2) :
+            state.score + 42 * ((18 - state.openCards.length) / 2) :
             state.score - 42 * (state.openCards.length / 2)
     }),
 }, initialState);

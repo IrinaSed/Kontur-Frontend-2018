@@ -1,12 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Link } from 'react-router-dom';
 
 import './index.css';
 
 export default class extends React.PureComponent {
     static propTypes = {
-        text: PropTypes.string.isRequired,
+        children: PropTypes.string.isRequired,
         to: PropTypes.string.isRequired,
         style: PropTypes.object,
     };
@@ -16,10 +15,10 @@ export default class extends React.PureComponent {
     };
 
     render() {
-        const { text, to, style } = this.props;
+        const { children, to, style } = this.props;
 
         return (
-            <Link className="link" style={style} to={to}>{text}</Link>
+            <a className="link" style={style} href={to}>{children}</a>
         );
     }
 }

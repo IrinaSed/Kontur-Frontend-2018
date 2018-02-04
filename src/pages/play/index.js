@@ -40,8 +40,6 @@ class Play extends React.PureComponent {
 
     render() {
         const { score, openCards } = this.props;
-        console.log(this.state);
-        console.log(this.props);
 
         if (openCards.length === 18) {
             return <Redirect to="/end"/>
@@ -75,30 +73,31 @@ class Play extends React.PureComponent {
     }
 
     handleClick = id => {
-        const { reverseCard, changeScore, addOpenCards, openCards } = this.props;
+        const { reverseCard, changeScore, addOpenCards } = this.props;
         const { currentOpen, isDisabled, pictures } = this.state;
 
-        if ( !isDisabled ) {
-            if ((currentOpen || currentOpen === 0) && !openCards.includes(id) && currentOpen !== id) {
-                reverseCard(id);
-                this.setState({ isDisabled: true });
-                setTimeout(() => {
-                    if (pictures[currentOpen] === pictures[id]) {
-                        addOpenCards([id, currentOpen]);
-                    } else {
-                        reverseCard(id);
-                        reverseCard(currentOpen);
-                    }
+        if (isDisabled || currentOpen === id) {
+            return;
+        }
 
-                    changeScore(pictures[currentOpen] === pictures[id]);
-                    this.setState({ currentOpen: null, isDisabled: false });
-                }, 500);
-            } else {
-                if ( currentOpen !== id) {
+        reverseCard(id);
+
+        if (Number.isFinite(currentOpen)) {
+            this.setState({ isDisabled: true });
+
+            setTimeout(() => {
+                if (pictures[currentOpen] === pictures[id]) {
+                    addOpenCards([id, currentOpen]);
+                } else {
                     reverseCard(id);
-                    this.setState({ currentOpen: id });
+                    reverseCard(currentOpen);
                 }
-            }
+
+                changeScore(pictures[currentOpen] === pictures[id]);
+                this.setState({ currentOpen: null, isDisabled: false });
+            }, 500);
+        } else {
+            this.setState({currentOpen: id});
         }
     };
 }
