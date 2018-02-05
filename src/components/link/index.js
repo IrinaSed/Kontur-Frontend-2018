@@ -6,7 +6,7 @@ import './index.css';
 export default class extends React.PureComponent {
     static propTypes = {
         children: PropTypes.string.isRequired,
-        to: PropTypes.string.isRequired,
+        href: PropTypes.string.isRequired,
         style: PropTypes.object,
     };
 
