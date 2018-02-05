@@ -18,7 +18,13 @@ class End extends React.PureComponent {
                 <p className="end__title-game">
                     Поздравляем!<br/>Ваш итоговый счёт: {this.props.score}
                 </p>
-                <Link to="/play" style={{padding: "10px 30px"}}>Ещё раз</Link>
+                <Link
+                    data-tid="EndGame-retryGame"
+                    href="/play"
+                    style={{padding: "10px 30px"}}
+                >
+                    Ещё раз
+                </Link>
             </div>
         );
     }

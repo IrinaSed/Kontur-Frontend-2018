@@ -5,6 +5,7 @@ import { Provider } from 'react-redux';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
 import reducer from './redux/reducers';
+import NotFound from './pages/not-found';
 import Play from './pages/play';
 import Main from './pages/main';
 import End from './pages/end';
@@ -17,7 +18,8 @@ ReactDOM.render(
             <Switch>
                 <Route path="/play" component={Play}/>
                 <Route path="/end" component={End}/>
-                <Route path="/" component={Main}/>
+                <Route exact path="/" component={Main}/>
+                <Route component={NotFound}/>
             </Switch>
         </BrowserRouter>
     </Provider>

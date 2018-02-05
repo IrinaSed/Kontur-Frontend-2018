@@ -1,6 +1,5 @@
 html,
-body
-{
+body {
     font-family: sans-serif;
 
     width: 100%;
@@ -11,8 +10,7 @@ body
     background-color: #1c7230;
 }
 
-.app
-{
+.app {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -20,7 +18,8 @@ body
     height: 100%;
 }
 
-.hidden
-{
+.hidden {
     visibility: hidden;
+    opacity: 0;
+    transition: visibility 0s 0.5s, opacity 0.5s linear;
 }

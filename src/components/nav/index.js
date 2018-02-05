@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Link } from 'react-router-dom';
 
 import './index.css';
 
@@ -14,8 +13,15 @@ export default class extends React.PureComponent {
 
         return (
             <div className="nav">
-                <Link className="nav__button" to="/play">Начать заново</Link>
-                <p className="nav__score">Очки: {score}</p>
+                <a className="nav__button" href="/play" data-tid="Menu-newGame">
+                    Начать заново
+                </a>
+                <p className="nav__score">
+                    Очки:
+                    <span className="nav__score_value" data-tid="Menu-scores">
+                        {score}
+                    </span>
+                </p>
             </div>
         );
     }

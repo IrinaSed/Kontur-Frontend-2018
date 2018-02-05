@@ -18,14 +18,25 @@ export default class extends React.PureComponent {
 
     render() {
         const { picture, isBack, onClick, className } = this.props;
-        const image = isBack ? 'image/test-card.jpg' : picture;
 
         return (
             <div
-                className={`card ${className}`}
-                style={{ backgroundImage: `url(${image})` }}
-                onClick={onClick}
-            />
+                className={`flip flip_${isBack ? 'front' : 'back'}`}
+                data-tid={isBack ? 'Card-flipped' : 'Card'}
+            >
+                <div className="flipper">
+                    <div
+                        className={`card card__front ${className}`}
+                        style={{ backgroundImage: `url(${picture})` }}
+                        onClick={onClick}
+                    />
+                    <div
+                        className={`card card__back ${className}`}
+                        style={{ backgroundImage: 'url(image/back.png)' }}
+                        onClick={onClick}
+                    />
+                </div>
+            </div>
         );
     }
 }

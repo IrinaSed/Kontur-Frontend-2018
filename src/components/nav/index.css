@@ -1,3 +1,8 @@
+@font-face {
+    font-family: Krungthep;
+    src: url(../../fonts/krungthep.ttf);
+}
+
 .nav {
     display: flex;
     justify-content: space-between;
@@ -18,4 +23,13 @@
 
     opacity: .8;
     color: #fff;
+}
+
+.nav__score_value {
+    font-family: Krungthep, sans-serif;
+    font-weight: 100;
+}
+
+.nav__score_value:before {
+    content: ' ';
 }

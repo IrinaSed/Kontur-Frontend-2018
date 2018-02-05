@@ -5,4 +5,37 @@
 
     background-position: 50% 50%;
     background-size: cover;
+
+    border-radius: 5px;
+}
+
+.flip {
+    perspective: 1000px;
+}
+
+.flip_front .flipper {
+    transform: rotateY(180deg);
+}
+
+.flipper {
+    transition: 0.6s;
+    transform-style: preserve-3d;
+
+    position: relative;
+}
+
+
+.card__front,
+.card__back {
+    backface-visibility: hidden;
+}
+
+.card__front {
+    z-index: 2;
+    transform: rotateY(0deg);
+}
+
+.card__back {
+    transform: rotateY(180deg);
+    margin-top: -170px;
 }

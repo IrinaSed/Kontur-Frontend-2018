@@ -46,7 +46,7 @@ class Play extends React.PureComponent {
         }
 
         return (
-            <div>
+            <div data-tid="Deck">
                 <Nav score={score}/>
                 {[0, 6, 12].map(begin => this.renderRow(begin))}
             </div>
@@ -94,8 +94,10 @@ class Play extends React.PureComponent {
                 }
 
                 changeScore(pictures[currentOpen] === pictures[id]);
-                this.setState({ currentOpen: null, isDisabled: false });
             }, 500);
+            setTimeout(() => {
+                this.setState({ currentOpen: null, isDisabled: false });
+            }, 600);
         } else {
             this.setState({currentOpen: id});
         }

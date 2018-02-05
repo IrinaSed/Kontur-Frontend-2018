@@ -9,7 +9,9 @@ export default class extends React.PureComponent {
             <div className="main">
                 <div className="main__picture" style={{ backgroundImage: `url(${'image/start.png'})` }}/>
                 <p className="main__title-game">MEMORY GAME</p>
-                <Link to="/play">Начать игру</Link>
+                <Link href="/play" data-tid="NewGame-startGame">
+                    Начать игру
+                </Link>
             </div>
         );
     }

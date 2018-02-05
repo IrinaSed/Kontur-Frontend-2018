@@ -15,10 +15,17 @@ export default class extends React.PureComponent {
     };
 
     render() {
-        const { children, to, style } = this.props;
+        const { children, href, style, ...rest } = this.props;
 
         return (
-            <a className="link" style={style} href={to}>{children}</a>
+            <a
+                className="link"
+                style={style}
+                href={href}
+                {...rest}
+            >
+                {children}
+            </a>
         );
     }
 }
