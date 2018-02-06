@@ -17,7 +17,7 @@ export default handleActions({
         },
     }),
 
-    [CLOSE_ALL_CARDS]: (state, {payload}) => ({
+    [CLOSE_ALL_CARDS]: state => ({
         ...state,
         cards: {...new Array(18).fill(true)},
     }),

@@ -4,7 +4,7 @@ export const getArray = () => {
     return shuffleArray(uniqueArray.concat(uniqueArray));
 };
 
-const getUniqueRandomArray = () =>
+export const getUniqueRandomArray = () =>
     new Array(9).fill().reduce(array => {
         let randomNumber = getRandomInt(0, 52);
 
